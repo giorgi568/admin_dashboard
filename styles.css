@@ -1,21 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+
 :root{
     --dark: #22c55e;
     --light: #bbf7d0;
     --lighter: #f0fdf4;
+    --yellow: #fbbf24;
+    --grey: #cbd5e1;
 }
 body{
     margin: 0;
     padding: 0;
-    height: 100vh;
-   
+    font-family: 'Raleway', sans-serif;
+    /* height: 100vh; */
 }
 .container{
     box-sizing: border-box;
-    height: clamp(600px, 100%, 100%);
+    /* height: clamp(600px, 100%, 100%); */
+    height: 750px;
     width: 100%;
     display: grid;
     grid-template-columns: minmax(220px, 2fr) minmax(600px, 9fr);
-    grid-template-rows: 2fr 6fr;
+    grid-template-rows: 2fr 8fr;
 }
 .nav{
     box-sizing: border-box;
@@ -25,8 +30,8 @@ body{
     grid-row: 1/3;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 4fr 2fr;
-    align-items: center;
+    grid-template-rows: 100px 340px 120px;
+    align-items: start;
     font-weight: 700;
 }
 .wrapper-bottom{
@@ -45,12 +50,18 @@ body{
     grid-row: 1/2;
     padding-right: 10px;
     display: grid;
-
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, minmax(70px, 1fr));
 }
 .main{
-    background-color: var(--lighter);
+    background-color: var(--grey);
     grid-column: 2/3;
     grid-row: 2/3;
+    box-sizing: border-box;
+    padding: 20px 10px;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: 1fr 1fr;
 }
 svg{
     width: 50px;
@@ -64,8 +75,8 @@ svg{
 }
 .logo{
     box-sizing: border-box;
-    width: 220px;
-    height: 60%;
+    /* width: 220px; */
+    /* height: 60%; */
     display: flex;
     /* justify-content: center; */
     align-items: center;
@@ -74,6 +85,7 @@ svg{
     /* padding-top: 50px; */
     padding: 0;
     padding-left: 15px;
+    padding-top: 10px;
 }
 .side{
     box-sizing: border-box;
@@ -98,10 +110,10 @@ input{
     flex-grow: 1;
 }
 .profile-small{
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
     border-radius: 50%;
-    padding-right: 10px;
+    /* padding-right: 10px; */
     margin: 0;
 }
 .container-header{
@@ -111,13 +123,14 @@ input{
 }
 .name{
     font-weight: 700;
+    padding-left: 10px;
 }
 .magnify{
     padding: 0;
 }
 .profile-medium{
-    height: 50px;
-    width: 50px;
+    height: 60px;
+    width: 60px;
     border-radius: 50%;
 }
 .wrapper-name{
@@ -148,4 +161,89 @@ button{
 }
 img{
     cursor: pointer;
+}
+.card{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: 200px;
+    padding: 25px 8px;
+    padding-left: 30px;
+    /* background-color:white; */
+    /* border: 2px solid red; */
+    gap: 5px;
+    border-radius: 8px;
+    background-image: linear-gradient(90deg, var(--yellow) 2%, white 2% );
+}
+p{
+    margin: 0;
+    opacity: 0.5;
+}
+h4{
+    margin: 0;
+}
+header{
+    font-size: larger;
+    font-weight: 600;
+    grid-column: 1/-1;
+    display: flex;
+    align-items: center;
+}
+.card-icons{
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 10px;
+}
+.card-panel{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    /* grid-template-rows: 30px repeat(auto, 1fr); */
+    grid-template-rows: 30px repeat(auto-fill, 200px);
+    gap: 15px;
+    grid-row: 1/3;
+    grid-column: 1/2;
+}
+.announcement{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #f0fdf4;
+    width: 300px;
+    box-sizing: border-box;
+    padding: 30px;
+    border-radius: 8px;
+}
+.announcement p{
+    padding-bottom: 15px;
+    border-bottom: 3px solid var(--grey);
+}
+#announcement-last{
+    border: 0;
+}
+.announcement-pane{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.panel{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+.trending{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #f0fdf4;
+    border-radius: 8px;
+    width: 300px;
+    padding: 30px;
+}
+.trending-pane{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
 }
